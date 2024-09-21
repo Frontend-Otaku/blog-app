@@ -13,8 +13,11 @@ app.use(express.json());
 
 // Подключение маршрутов
 const userRoutes = require("./routes/userRoutes");
-// app.use("/api/posts", postRoutes);
+const postRoutes = require("./routes/postRoutes");
+const commentRoutes = require("./routes/commentRoutes");
+app.use("/api/posts", postRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/comments", commentRoutes);
 
 // Подключение к MongoDB
 mongoose
